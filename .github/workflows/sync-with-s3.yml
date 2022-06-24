@@ -1,0 +1,20 @@
+name: Sync configuration bucket with repository
+
+on: workflow_dispatch
+
+jobs:
+  sync:
+    name: Sync settings with S3 configuration bucket
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Install Python 3.9
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.9"
+
+      - name: Sync with S3 bucket
+        run: aws s3 sync configuration/ s3://${{ secrets.AWS_CONFIGURATION_BUCKET }} --delete
+
