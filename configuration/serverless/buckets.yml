@@ -1,0 +1,36 @@
+development:
+  layers:
+    bucketName: jomicu-layers
+    serverSideEncryption: AES256
+    bucketConfiguration:
+      blockPublicAccess: true
+      tags:
+        - Key: Managed by
+          Value: Serverless
+  apis:
+    bucketName: jomicu-apis
+    serverSideEncryption: AES256
+    bucketConfiguration:
+      blockPublicAccess: true
+      tags:
+        - Key: Managed by
+          Value: Serverless
+
+production:
+  layers:
+    bucketName: jomicu-layers
+    serverSideEncryption: AES256
+    bucketConfiguration:
+      blockPublicAccess: true
+      tags:
+        - Key: Managed by
+          Value: Serverless
+  apis:
+    bucketName: jomicu-apis
+    serverSideEncryption: AES256
+    bucketConfiguration:
+      blockPublicAccess: true
+      tags:
+        - Key: Managed by
+          Value: Serverless
+
